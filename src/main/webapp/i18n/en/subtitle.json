@@ -1,0 +1,24 @@
+{
+    "stageCapServiceApp": {
+        "subtitle" : {
+            "home": {
+                "title": "Subtitles for {{ param }}",
+                "createLabel": "Create a new Subtitle",
+                "createOrEditLabel": "Create or edit a Subtitle",
+                "search": "Search for Subtitle"
+            },
+            "created": "A new Subtitle is created with identifier {{ param }}",
+            "updated": "A Subtitle is updated with identifier {{ param }}",
+            "deleted": "A Subtitle is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Subtitle {{ id }}?"
+            },
+            "detail": {
+                "title": "Subtitle"
+            },
+            "language": "Language",
+            "file": "File",
+            "project": "Project"
+        }
+    }
+}

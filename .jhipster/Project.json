@@ -1,0 +1,68 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "subtitle",
+      "otherEntityName": "subtitle",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "project"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "audioDescription",
+      "otherEntityName": "audioDescription",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "project"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "playing",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "free",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "seeker",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "user",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160422100034",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl"
+}

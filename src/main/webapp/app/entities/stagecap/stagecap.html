@@ -1,0 +1,19 @@
+<div>
+    <sub-controller project-id="vm.projectId"></sub-controller>
+    <rzslider rz-slider-model="vm.time" rz-slider-options="vm.sliderOptions"></rzslider>
+</div>
+<uib-tabset active="activeJustified" justified="true">
+    <uib-tab  ng-repeat="sub in vm.subtitleEntities" index="$index" heading="{{sub.language}}" select="vm.switchLanguage($index)">
+    </uib-tab>
+</uib-tabset>
+    <br>
+    <sub-viewer project-id="vm.projectId" language="vm.language"></sub-viewer>
+    <ad-player project-id="vm.projectId" language="vm.language"></ad-player>
+    <div class="ui-list-view-striped" ui-list-view="subtitle in vm.subtitles" options="vm.listOptions">
+        <!--options="vm.listOptions"-->
+        <div ng-click="vm.itemclick($index)"><strong>{{ subtitle.id }}</strong>&nbsp;<i>{{subtitle.startTime}}&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>&nbsp;{{subtitle.endTime}}</i>&nbsp;<pre>{{ subtitle.text }}</pre></div>
+    </div>
+
+
+<br>
+

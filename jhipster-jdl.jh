@@ -1,0 +1,38 @@
+entity Project {
+	title String required,
+    description String,
+    image ImageBlob,
+    active Boolean,
+    playing Boolean,
+    free Boolean,
+    seeker Long,
+    user String
+}
+/*
+* properties: infinotePath
+* nameConvention for DocName: id of subtitle
+*/
+entity Subtitle {
+	language Language required,
+    file Blob required
+}
+
+entity AudioDescription {
+	language Language,
+    file Blob required
+}
+
+enum Language {
+	FRENCH, ENGLISH, SPANISH, GERMAN, ITALIAN
+}
+
+relationship OneToMany {
+	Project{subtitle} to Subtitle{project(title)}
+}
+
+relationship OneToMany {
+    Project{audioDescription} to AudioDescription{project(title)}
+}
+
+service Project, Subtitle, AudioDescription with serviceImpl
+paginate Project with pagination

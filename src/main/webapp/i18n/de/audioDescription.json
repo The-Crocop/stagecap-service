@@ -1,0 +1,24 @@
+{
+    "stageCapServiceApp": {
+        "audioDescription" : {
+            "home": {
+                "title": "Audio Descriptions for {{ param }}",
+                "createLabel": "Audio Description erstellen",
+                "createOrEditLabel": "Audio Description erstellen oder bearbeiten",
+                "search": "Suche nach Audio Description"
+            },
+            "created": "Audio Description erstellt mit ID {{ param }}",
+            "updated": "Audio Description aktualisiert mit ID {{ param }}",
+            "deleted": "Audio Description gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Audio Description {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Audio Description"
+            },
+            "language": "Language",
+            "file": "File",
+            "project": "Project"
+        }
+    }
+}

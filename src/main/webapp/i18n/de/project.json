@@ -1,0 +1,33 @@
+{
+    "stageCapServiceApp": {
+        "project" : {
+            "home": {
+                "title": "Projects",
+                "createLabel": "Project erstellen",
+                "createOrEditLabel": "Project erstellen oder bearbeiten",
+                "search": "Suche nach Project"
+            },
+            "created": "Project erstellt mit ID {{ param }}",
+            "updated": "Project aktualisiert mit ID {{ param }}",
+            "deleted": "Project gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Project {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Project"
+            },
+            "title": "Title",
+            "description": "Description",
+            "image": "Image",
+            "active": "Active",
+            "playing": "Playing",
+            "free": "Free",
+            "seeker": "Seeker",
+            "user": "User",
+            "subtitle": "Subtitle",
+            "audioDescription": "Audio Description",
+            "subtitles":"Subtitles",
+            "audioDescriptions":"Audio Descriptions"
+        }
+    }
+}

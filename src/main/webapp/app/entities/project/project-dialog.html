@@ -1,0 +1,97 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectLabel" translate="stageCapServiceApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.project.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.project.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.project.title"
+                    required />
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.project.description"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.project)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="stageCapServiceApp.project.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.project.imageContentType + ';base64,' + vm.project.image}}" style="max-height: 100px;" ng-if="vm.project.image"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{vm.project.imageContentType}}, {{byteSize(vm.project.image)}}</span>
+                    <button ng-click="vm.project.image=null;vm.project.imageContentType=null;"
+                            ng-if="vm.project.image"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.project)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.project.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.project.imageContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                    ng-model="vm.project.active"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.playing" for="field_playing">Playing</label>
+            <input type="checkbox" class="form-control" name="playing" id="field_playing"
+                    ng-model="vm.project.playing"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.free" for="field_free">Free</label>
+            <input type="checkbox" class="form-control" name="free" id="field_free"
+                    ng-model="vm.project.free"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="stageCapServiceApp.project.seeker" for="field_seeker">Seeker</label>
+            <input type="number" class="form-control" name="seeker" id="field_seeker"
+                    ng-model="vm.project.seeker"
+                     />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" translate="stageCapServiceApp.project.user" for="field_user">User</label>-->
+            <!--<input type="text" class="form-control" name="user" id="field_user"-->
+                    <!--ng-model="vm.project.user"-->
+                     <!--/>-->
+        <!--</div>-->
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
